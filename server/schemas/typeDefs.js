@@ -31,17 +31,18 @@ type Query {
 
 input bookInput {
     author: [String]
-    title: String
-    bookId: Int
+    title: String!
+    bookId: String!
     image: String
     link: String
+    description: String!
 }
 
 type Mutation {
-    login(username: String!, password: String!): Auth
+    login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    saveBook(input: bookInput): User
-    removeBook(bookId: Int): User
+    saveBook(bookData: bookInput!): User
+    removeBook(bookId: ID!): User
 }
 `;
 

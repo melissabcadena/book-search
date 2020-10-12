@@ -1,8 +1,8 @@
 import gql from 'graphql-tag';
 
 export const LOGIN_USER = gql`
-    mutation login($username: String!, $password: String!) {
-        login(username: $username, password: $password) {
+    mutation login($email: String!, $password: String!) {
+        login(email: $email, password: $password) {
             token 
             user {
                 _id
@@ -24,18 +24,18 @@ export const ADD_USER = gql`
 `;
 
 export const SAVE_BOOK = gql`
-    mutation saveBook($bookInfo: bookInput) {
-        saveBook(bookInfo: $bookInfo) {
+    mutation saveBook($bookData: bookInput!) {
+        saveBook(bookData: $bookData) {
             _id
             username
             email
-            savedBooks{
-                bookId
-                authors
+            savedBooks {
+                author
                 title
-                description
+                bookId
                 image
                 link
+                description
             }
         }
     }
