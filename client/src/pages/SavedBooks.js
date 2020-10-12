@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Jumbotron, Container, CardColumns, Card, Button } from 'react-bootstrap';
 
 import Auth from '../utils/auth';
 import { removeBookId } from '../utils/localStorage';
 
-import { useQuery, useMutation  } from '@apollo/react-hooks';
+import { useQuery, useMutation } from '@apollo/react-hooks';
 import { GET_ME } from '../utils/queries';
+import { REMOVE_BOOK } from '../utils/mutations';
 
 const SavedBooks = () => {
     const { loading, data } = useQuery(GET_ME);
-    const [removeBook, { error }] = userMutation(REMOVE_BOOK);
+    const [ removeBook ] = useMutation(REMOVE_BOOK);
     
     const userData = data?.me || {};
 
@@ -35,7 +36,7 @@ const SavedBooks = () => {
   };
 
   // if data isn't here yet, say so
-  if (!userDataLength) {
+  if (loading) {
     return <h2>LOADING...</h2>;
   }
 
