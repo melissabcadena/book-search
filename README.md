@@ -25,13 +25,13 @@ This application allows users to sign up for an account so they can save books t
 <img src="./images/homepage.png">
 
 * Login/SignUp Page
-<img src="./utils/images/login.png">
+<img src="./images/login.png">
 
 * Search Results 
-<img src="./utils/images/search.png">
+<img src="./images/search.png">
 
 * Saved Books
-<img src="./utils/images/saved.png">
+<img src="./images/saved.png">
 
 
 
