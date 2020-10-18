@@ -40,7 +40,6 @@ const resolvers = {
         },
 
         saveBook: async (parent, { bookData }, context) => {
-            console.log("args", args);
             console.log("context", context);
             
             if(context.user) {
